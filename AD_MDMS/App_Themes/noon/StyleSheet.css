@@ -1,0 +1,107 @@
+﻿*{	margin:0;padding:0; }
+#container
+{
+	height:100%;
+	width:100%;
+	background-color:#D0DCE0;
+	box-sizing:border-box;
+}
+#sidebar
+{
+	height: 100%;
+	width: 14.605%;
+	background-color:#e49f1f;
+	position: absolute;
+	border-right: 5px solid #cbc9c9;
+}
+#main
+{
+	height:100%;
+	width:84.9%;
+	background-color:#D0DCE0;
+	float:right;
+}
+#header {
+	height:11%;
+	width:100%;
+	background-color:#dedede;
+}
+#content {
+	height:72%;
+	width:100%;
+	background-color:#f3f3f3;
+	overflow:auto;
+}
+#footer {
+	height:17%;
+	width:100%;
+	background-color:#EFF6FE;
+	overflow:auto;
+}
+#logo_div {
+	height:10%;
+	width:100%;
+	text-align:center;
+}
+.logo
+{
+	padding-top:2%;
+	padding-bottom:2%;
+}
+#icons_div {
+	height:5%;
+	width:100%;
+	text-align:center;
+	vertical-align:middle;
+}
+.icons
+{
+	margin-top:3%;
+}
+#list 
+{
+	height:85%;
+	width:100%;
+	overflow:auto;
+}
+.button
+{
+	border-style: solid;
+	margin-top: 10px;
+	color: rgb(7, 41, 24);
+	margin-left: 5px;
+	cursor: pointer;
+	border-radius: 10px;
+	font-weight: bold;
+	border-color: rgb(9, 9, 9);
+	font-size: 0.9em;
+	background-color: rgb(221, 225, 217);
+	height: 28px;
+}
+.combobox
+{
+	height: 27px;
+    width: 100px;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    background-color: White;
+    border:1px solid black;
+}
+.header_button
+{
+    background-color:Transparent;
+    border-style:solid;
+    margin-top:10px;
+    color:#183187;
+    margin-left:5px;
+    cursor:pointer;
+    font-size: 0.9em;
+    border-radius:10px;
+    font-weight:bold;
+    border-color: #090909;
+    margin-top:0px;
+}
+.selected_Button
+{
+    background-color:#EEF3F6;
+}

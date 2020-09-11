@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main_MasterPage.master.cs" Inherits="MasterPages_Main_MasterPage" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="title_ContentPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    <link href="../App_Themes/Whity/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../Images/small_logo.ico" /> <!-- type="image/x-icon"   is optional --><!-- THIS IS USED TO DISPLAY ICON ON TITLE BAR-->
+</head>
+<body>
+    <form id="main_form" runat="server">
+    <table id="container" border="0" style="position:absolute;">
+        <tr>
+            <td rowspan="3" style="width:20%;" align="justify" valign="top" id="sidebar">
+                <table style="width: 100%; height: 100%;" >
+                    <tr>
+                        <td height="10%" align="center">
+                            <asp:Image ID="logo_Image" runat="server" Height="50px" 
+                                ImageUrl="~/Images/small_logo.png" Width="50px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="5%" align="center">
+                            <asp:ImageButton ID="Home_ImageButton" runat="server" Height="25px" 
+                                ImageUrl="~/Images/Home_96px.png" Width="25px" 
+                                onclick="Home_ImageButton_Click" BorderColor="Black" BorderStyle="Solid" 
+                                BorderWidth="1px" ToolTip="Home" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:ImageButton ID="Refresh_ImageButton" runat="server" Height="25px" 
+                                ImageUrl="~/Images/Refresh_104px.png" Width="25px" 
+                                onclick="Refresh_ImageButton_Click" BorderColor="Black" 
+                                BorderStyle="Solid" BorderWidth="1px" ToolTip="Refresh" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:ImageButton ID="information_ImageButton" runat="server" Height="25px" 
+                                ImageUrl="~/Images/About_96px.png" Width="25px" BorderColor="Black" 
+                                BorderStyle="Solid" BorderWidth="1px" ToolTip="Information" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:ImageButton ID="Database_Configuration_ImageButton" runat="server" Height="25px" 
+                                ImageUrl="~/Images/Database Administrator_104px.png" Width="25px" 
+                                BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" 
+                                ToolTip="Database Configuration" 
+                                PostBackUrl="~/DatabaseConfiguration.aspx" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="justify" height="80%" valign="top">
+                                        <asp:TreeView ID="Database_TreeView" runat="server" ForeColor="Black" 
+                                            onselectednodechanged="TreeView1_SelectedNodeChanged" 
+                                            ontreenodeexpanded="TreeView1_TreeNodeExpanded" 
+                                ShowLines="True" ExpandDepth="0">
+                                        </asp:TreeView>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width:80%;height:15%;" align="left" valign="top">
+                <asp:Label ID="Label1" runat="server" Text="MYSQL"></asp:Label>
+                <br />
+                <br />
+    <asp:Button ID="Database_Button" runat="server" Text="Database" 
+        BackColor="#FFAEAE" onclick="Database_Button_Click"
+         />
+    <asp:Button ID="SQL_Button" runat="server" Text="SQL" />
+    <asp:Button ID="import_Button" runat="server" Text="Import" />
+    <asp:Button ID="export_Button" runat="server" Text="Export" />
+                <asp:ContentPlaceHolder ID="Menu_ContentPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        <tr >
+            <td style="height:70%;" bgcolor="#D0DCE0" align="justify" valign="top">
+                        <br />
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        <tr>
+            <td style="height:10%;">
+                <asp:ContentPlaceHolder ID="footer_contentPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        </table>
+    </form>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

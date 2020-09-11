@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPages_MasterPage" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <link href="../App_Themes/Whity/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="shortcut icon" href="../Images/small_logo.ico" /> <!-- type="image/x-icon"   is optional --><!-- THIS IS USED TO DISPLAY ICON ON TITLE BAR-->
+    
+    <script runat="server">
+       
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="container" >
+	    <div id="sidebar">
+		    <div id="logo_div" >
+		        <asp:Image ID="logo_Image" runat="server" Height="60px" 
+                                ImageUrl="~/Images/small_logo.png" Width="60px" 
+                    CssClass="logo" />
+		    </div>
+		    <div id="icons_div">
+                            <asp:ImageButton ID="Home_ImageButton" runat="server" Height="25px" Width="25px" 
+                    ImageUrl="~/Images/Home_96px.png" BorderStyle="Solid" BorderWidth="1px" 
+                                CssClass="icons" ToolTip="Go To Home Page" CausesValidation="False" />&nbsp;&nbsp;&nbsp;
+                            <asp:ImageButton ID="Refresh_ImageButton" runat="server" Height="25px" Width="25px" 
+                    ImageUrl="~/Images/Refresh_104px.png" BorderStyle="Solid" BorderWidth="1px" 
+                                CssClass="icons" ToolTip="Refresh Database" 
+                                onclick="Refresh_ImageButton_Click" CausesValidation="False" />&nbsp;&nbsp;&nbsp;
+                            <asp:ImageButton ID="AboutUs_ImageButton" runat="server" Height="25px" Width="25px" 
+                    ImageUrl="~/Images/About_96px.png" BorderStyle="Solid" BorderWidth="1px" 
+                                CssClass="icons" ToolTip="About Us" CausesValidation="False" />&nbsp;&nbsp;&nbsp;
+                            <asp:ImageButton ID="DatabaseConfiguration_ImageButton" runat="server" 
+                                Height="25px" Width="25px" 
+                    ImageUrl="~/Images/Database Administrator_104px.png" BorderStyle="Solid" CssClass="icons"
+                                BorderWidth="1px" onclick="DatabaseConfiguration_ImageButton_Click" 
+                                PostBackUrl="~/DatabaseConfiguration.aspx" 
+                                ToolTip="Configure Database Provider" CausesValidation="False" />		        
+		    </div>
+		    <div id="list">
+		        <asp:TreeView ID="Database_TreeView" runat="server" 
+                    ExpandDepth="0" 
+                    onselectednodechanged="Database_TreeView_SelectedNodeChanged" 
+                    ontreenodeexpanded="Database_TreeView_TreeNodeExpanded" 
+                    ontreenodecollapsed="Database_TreeView_TreeNodeCollapsed" ImageSet="Arrows">
+                    <ParentNodeStyle Font-Bold="False" />
+                    <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                    <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" 
+                        HorizontalPadding="0px" VerticalPadding="0px" />
+                    <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" 
+                        HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+                </asp:TreeView>
+		    </div>
+	    </div>
+	    <div id="main">
+		    <div id="header">
+		        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <br /> <br />
+                <asp:ContentPlaceHolder ID="Options" runat="server">
+                </asp:ContentPlaceHolder>
+		        <br />
+		    </div>
+		    <div id="content">
+		        <div style="margin-left:10px;margin-right:10px;">
+		        <asp:ContentPlaceHolder ID="Content_ContentPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>
+                </div>
+		    </div>
+		    <div id="footer" style="vertical-align:middle;"  >
+		        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Message_Label" runat="server"></asp:Label><br /><br />
+		        <hr></hr>
+		         &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="SQL_Label" runat="server" ></asp:Label>
+		    </div>
+	    </div>
+    </div>
+    </form>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
